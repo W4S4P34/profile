@@ -13,7 +13,7 @@ function App() {
             {...rest}
             path={path}
             element={
-              <React.Suspense fallback={() => "Loading..."}>
+              <React.Suspense fallback={<Loading />}>
                 <Component {...props} />
               </React.Suspense>
             }
@@ -23,5 +23,7 @@ function App() {
     </Routes>
   )
 }
+
+const Loading = () => <div>Loading...</div>;
 
 export default App
