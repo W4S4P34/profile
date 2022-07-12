@@ -1,7 +1,7 @@
 import { lazy } from 'react'
 
 export default {
-    path: "/about",
+    path: "/",
     index: false,
     caseSensitive: true,
     element: lazy(() => import(".")),

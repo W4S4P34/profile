@@ -1,9 +1,9 @@
 import { lazy } from 'react'
 
 export default {
-    path: "/",
+    path: "/home",
     index: false,
     caseSensitive: true,
     element: lazy(() => import(".")),
-    props: { name: "SAMUEL" }
+    props: null
 }

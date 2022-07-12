@@ -1,11 +1,13 @@
 module.exports = {
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
     ],
     "parser": "babel-eslint",
     "plugins": [
         "react",
+        "react-hooks",
         "prettier"
     ],
     "parserOptions": {
@@ -30,6 +32,8 @@ module.exports = {
     },
     "rules": {
         "react/prop-types": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
         "no-console": 0,
         "react/sort-comp": [1, {
             "order": [
