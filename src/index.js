@@ -9,7 +9,7 @@ import App from './App'
 const root = ReactDOM.createRoot($('#root')[0])
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/profile'>
       <App />
     </BrowserRouter>
   </React.StrictMode>
