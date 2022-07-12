@@ -8,9 +8,7 @@ import App from './App'
 
 const root = ReactDOM.createRoot($('#root')[0])
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 )
