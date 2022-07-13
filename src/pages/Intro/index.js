@@ -1,15 +1,10 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
 
-import Dialogue from './components/Dialogue'
-
-import './index.css'
+import IntroDialogue from './components/IntroDialogue'
 
 const Intro = (props) => {
     return (
-        <div id='intro-dialogue-container' className='container-fluid'>
-            <Dialogue />
-        </div>
+        <IntroDialogue />
     )
 }
 

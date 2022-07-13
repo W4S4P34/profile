@@ -11,6 +11,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 import App from './App'
 
+import './index.css'
+
 const root = ReactDOM.createRoot($('#root')[0])
 root.render(
   <BrowserRouter basename='/profile'>

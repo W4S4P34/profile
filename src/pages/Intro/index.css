@@ -1,9 +1,24 @@
-#intro-dialogue-container {
-    position: fixed;
-    bottom: 5%;
+#skip-button {
+    transition:
+        transform 0.15s linear 0s,
+        text-shadow 0.15s linear 0s;
 }
 
-#intro-dialogue {
-    font-family: 'Source Code Pro', monospace;
-    text-align: center;
+#skip-button:hover {
+    transform: translate(-3px, -3px);
+    text-shadow: 3px 3px #00000044;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.25;
+    }
+}
+
+#click-anywhere-label {
+    animation: blink 1s linear 0s infinite alternate;
 }
