@@ -1,9 +1,11 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+
 
 const Home = (props) => {
     return (
-        <div>Nothing here yet, come back later, mate!</div>
+        <div className='d-flex mx-auto my-auto align-self-center'>
+            Nothing here yet, come back later, mate!
+        </div>
     )
 }
 

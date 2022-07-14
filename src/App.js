@@ -3,6 +3,9 @@ import { Routes, Route } from 'react-router-dom'
 
 import routes from './pages/routes'
 
+
+const Loading = () => <div>Loading...</div>;
+
 function App() {
   return (
     <Routes>
@@ -23,7 +26,5 @@ function App() {
     </Routes>
   )
 }
-
-const Loading = () => <div>Loading...</div>;
 
 export default App

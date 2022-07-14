@@ -9,13 +9,21 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // Bootstrap Bundle JS
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 
+import './index.css'
+
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 import App from './App'
 
-import './index.css'
 
 const root = ReactDOM.createRoot($('#root')[0])
 root.render(
-  <BrowserRouter basename='/profile'>
-    <App />
-  </BrowserRouter>
+  <div className='d-flex flex-column vh-100 theme'>
+    <BrowserRouter basename='/profile'>
+      <Header />
+      <App />
+      <Footer />
+    </BrowserRouter>
+  </div>
 )

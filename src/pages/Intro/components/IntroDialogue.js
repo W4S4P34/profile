@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import '../index.css'
 
 const IntroDialogue = (props) => {
     const scripts = [
@@ -81,28 +80,23 @@ const IntroDialogue = (props) => {
     }
 
     useEffect(() => {
-        let timerType
-
-        timerType = setTimeout(() => typeScript(), typeSpeed)
-
-        return () => {
-            clearTimeout(timerType)
-        }
+        let timerType = setTimeout(() => typeScript(), typeSpeed)
+        return () => clearTimeout(timerType)
     })
 
     return (
-        <div className='d-flex flex-column vh-100' onClick={() => completeScript()}>
+        <div className='d-flex flex-column w-100 h-100' onClick={() => completeScript()}>
             <Link to='/home'
                 id='skip-button'
-                className='d-flex mt-4 me-4 align-self-end text-reset text-decoration-none user-select-none'>
+                className='d-flex mt-4 ms-auto me-4 align-self-end text-reset text-decoration-none user-select-none'>
                 Skip &gt;
             </Link>
-            <div className='d-flex my-auto align-self-center user-select-none'>
+            <div className='d-flex mx-auto my-auto align-self-center user-select-none'>
                 {script}
             </div>
             <div
-                id='click-anywhere-label' 
-                className='d-flex mb-4 me-4 align-self-end user-select-none'>
+                id='continue-label'
+                className='d-flex mb-4 ms-auto me-4 align-self-end user-select-none'>
                 Click anywhere to continue
             </div>
         </div>

@@ -15,10 +15,10 @@
     }
 
     100% {
-        opacity: 0.25;
+        opacity: 0.15;
     }
 }
 
-#click-anywhere-label {
-    animation: blink 1s linear 0s infinite alternate;
+#continue-label {
+    animation: blink 0.65s ease-in 0s infinite alternate;
 }
