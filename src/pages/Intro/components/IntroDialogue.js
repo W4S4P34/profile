@@ -85,18 +85,18 @@ const IntroDialogue = (props) => {
     })
 
     return (
-        <div className='d-flex flex-column w-100 h-100' onClick={() => completeScript()}>
+        <div id='dialogue-container' className='d-flex flex-column justify-content-between' onClick={() => completeScript()}>
             <Link to='/home'
                 id='skip-button'
-                className='d-flex mt-4 ms-auto me-4 align-self-end text-reset text-decoration-none user-select-none'>
+                className='d-flex pt-4 ps-auto pe-4 align-self-end text-reset text-decoration-none user-select-none'>
                 Skip &gt;
             </Link>
-            <div className='d-flex mx-auto my-auto align-self-center user-select-none'>
+            <div className='d-flex px-4 align-self-center user-select-none'>
                 {script}
             </div>
             <div
                 id='continue-label'
-                className='d-flex mb-4 ms-auto me-4 align-self-end user-select-none'>
+                className='d-flex pb-4 ps-auto pe-4 align-self-end user-select-none'>
                 Click anywhere to continue
             </div>
         </div>
