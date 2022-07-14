@@ -92,3 +92,11 @@ body {
 .hover-border-theme:hover {
     border-color: #5a7247 !important
 }
+
+#root {
+    min-height: 100vh;
+}
+
+#root-content {
+    min-height: 100vh;
+}

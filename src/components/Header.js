@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
-import Logo from '../images/logo.png'
+import './Header.css'
 
 
 const Header = (props) => {
@@ -11,16 +11,48 @@ const Header = (props) => {
         if (location.pathname === '/') return
 
         return (
-            <nav className="navbar theme-d3">
-                <div className="d-flex flex-row w-100">
-                    <Link className='navbar-brand ms-4 text-reset text-decoration-none' to='/home'>
-                        <img
-                            src={Logo}
-                            alt='logo'
-                            width='19.5' height='28.5'
-                            className='me-2 align-text-center' />
-                        SAMUEL'S PORTFOLIO
+            <nav className='navbar navbar-expand-md navbar-dark'>
+                <div id='navbar-container' className='container-fluid'>
+                    <Link className='navbar-brand ms-4 me-auto text-reset text-decoration-none' to='/home'>
+                        SAMUEL
                     </Link>
+                    <button
+                        id='navbar-button'
+                        className='navbar-toggler ms-auto me-4'
+                        type='button' data-bs-toggle='collapse' data-bs-target='#navbar-content'
+                        aria-controls='navbar-content' aria-expanded='false'>
+                        <span id='navbar-icon'>
+                            <i className="fa fa-bars" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                    <div id='navbar-content' className='navbar-collapse collapse ms-4 me-4 text-end'>
+                        <div className='navbar-nav ms-auto'>
+                            <NavLink
+                                id='navbar-link'
+                                className='nav-link text-reset text-decoration-none'
+                                to='/home'>
+                                Home
+                            </NavLink>
+                            <NavLink
+                                id='navbar-link'
+                                className='nav-link text-reset text-decoration-none'
+                                to='/about'>
+                                About
+                            </NavLink>
+                            <NavLink
+                                id='navbar-link'
+                                className='nav-link text-reset text-decoration-none'
+                                to='/projects'>
+                                Projects
+                            </NavLink>
+                            <NavLink
+                                id='navbar-link'
+                                className='nav-link text-reset text-decoration-none'
+                                to='/blogs'>
+                                Blogs
+                            </NavLink>
+                        </div>
+                    </div>
                 </div>
             </nav>
         )

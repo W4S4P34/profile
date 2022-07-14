@@ -19,7 +19,7 @@ import App from './App'
 
 const root = ReactDOM.createRoot($('#root')[0])
 root.render(
-  <div className='d-flex flex-column vh-100 theme'>
+  <div id='root-content' className='d-flex flex-column justify-content-between'>
     <BrowserRouter basename='/profile'>
       <Header />
       <App />

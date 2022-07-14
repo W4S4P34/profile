@@ -11,8 +11,8 @@ const Footer = (props) => {
         if (location.pathname === '/') return
 
         return (
-            <div className='d-flex w-100 theme-d3'>
-                <div id='copyright-label' className='ms-4 my-3'>
+            <div className='d-flex w-100'>
+                <div id='copyright-label' className='ms-4 me-auto py-4'>
                     Copyright © 2022 Samuel La
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const About = (props) => {
+const Projects = (props) => {
     return (
         <div className='d-flex mx-auto my-auto align-self-center'>
             Nothing here yet, come back later, mate!
@@ -9,4 +9,4 @@ const About = (props) => {
     )
 }
 
-export default About
+export default Projects
