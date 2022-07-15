@@ -1,26 +1,28 @@
-import $ from 'jquery';
+import $ from "jquery";
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router } from "react-router-dom";
 
 // Bootstrap CSS
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+import "bootstrap/dist/css/bootstrap.min.css";
+
 // Bootstrap Bundle JS
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-import './index.css';
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
-import Header from './components/root/Header';
-import Footer from './components/root/Footer';
+import "./index.css";
 
-import Content from './Content';
+import Header from "./components/root/Header";
+import Footer from "./components/root/Footer";
 
-const root = ReactDOM.createRoot($('#root')[0]);
+import Content from "./Content";
+
+const root = ReactDOM.createRoot($("#root")[0]);
 root.render(
-  <Router basename="/profile">
-    <Header />
-    <Content />
-    <Footer />
-  </Router>
+	<Router basename="/profile">
+		<Header />
+		<Content />
+		<Footer />
+	</Router>
 );
