@@ -20,7 +20,7 @@ import Content from "./Content";
 
 const root = ReactDOM.createRoot($("#root")[0]);
 root.render(
-  <Router>
+  <Router basename="/profile">
     <Header />
     <Content />
     <Footer />

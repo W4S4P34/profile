@@ -1,15 +1,13 @@
 import { Suspense } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import routes from "./pages/routes";
 
 const Loading = () => <div>Loading...</div>;
 
 function Content() {
-  let location = useLocation();
-
   return (
-    <Routes location={location} key={location.pathname}>
+    <Routes>
       {routes.map(({ path, element: Component, props, ...rest }) => {
         return (
           <Route
