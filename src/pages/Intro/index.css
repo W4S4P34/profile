@@ -1,28 +1,26 @@
 #dialogue-container {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
-#skip-button {
-    transition:
-        transform 0.15s linear 0s,
-        text-shadow 0.15s linear 0s;
+#dialogue-container #skip-button {
+  transition: transform 0.15s linear 0s, text-shadow 0.15s linear 0s;
 }
 
-#skip-button:hover {
-    transform: translate(-3px, -3px);
-    text-shadow: 3px 3px #00000044;
+#dialogue-container #skip-button:hover {
+  transform: translate(-3px, -3px);
+  text-shadow: 3px 3px #00000044;
 }
 
 @keyframes blink {
-    0% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
 
-    100% {
-        opacity: 0.15;
-    }
+  100% {
+    opacity: 0.15;
+  }
 }
 
-#continue-label {
-    animation: blink 0.65s ease-in 0s infinite alternate;
+#dialogue-container #continue-label {
+  animation: blink 0.65s ease-in 0s infinite alternate;
 }

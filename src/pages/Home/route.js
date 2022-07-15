@@ -1,9 +1,9 @@
-import { lazy } from 'react'
+import { lazy } from 'react';
 
 export default {
-    path: "/home",
-    index: false,
-    caseSensitive: true,
-    element: lazy(() => import(".")),
-    props: null
-}
+  path: '/home',
+  index: false,
+  caseSensitive: false,
+  element: lazy(() => import('.')),
+  props: null
+};

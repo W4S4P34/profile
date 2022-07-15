@@ -1,29 +1,26 @@
-import $ from 'jquery'
+import $ from 'jquery';
 
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // Bootstrap CSS
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 // Bootstrap Bundle JS
-import 'bootstrap/dist/js/bootstrap.bundle.min'
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-import './index.css'
+import './index.css';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/root/Header';
+import Footer from './components/root/Footer';
 
-import App from './App'
+import Content from './Content';
 
-
-const root = ReactDOM.createRoot($('#root')[0])
+const root = ReactDOM.createRoot($('#root')[0]);
 root.render(
-  <div id='root-content' className='d-flex flex-column justify-content-between'>
-    <BrowserRouter basename='/profile'>
-      <Header />
-      <App />
-      <Footer />
-    </BrowserRouter>
-  </div>
-)
+  <Router basename="/profile">
+    <Header />
+    <Content />
+    <Footer />
+  </Router>
+);
