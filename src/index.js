@@ -13,16 +13,16 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 import "./index.css";
 
-import Header from "./components/root/Header";
-import Footer from "./components/root/Footer";
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
 
 import Content from "./Content";
 
 const root = ReactDOM.createRoot($("#root")[0]);
 root.render(
-	<Router basename="/profile">
-		<Header />
-		<Content />
-		<Footer />
-	</Router>
+  <Router basename="/profile">
+    <Header />
+    <Content />
+    <Footer />
+  </Router>
 );

@@ -6,7 +6,8 @@
 	},
 	"extends": [
 		"eslint:recommended",
-		"plugin:react/recommended"
+		"plugin:react/recommended",
+		"plugin:prettier/recommended"
 	],
 	"parserOptions": {
 		"ecmaFeatures": {
@@ -21,21 +22,85 @@
 	"rules": {
 		"indent": [
 			"error",
-			"tab"
+			2,
+			{
+				"SwitchCase": 1,
+				"ignoredNodes": [
+					"ConditionalExpression"
+				]
+			}
 		],
 		"linebreak-style": [
 			"error",
 			"windows"
-		],
-		"quotes": [
-			"error",
-			"double"
 		],
 		"semi": [
 			"error",
 			"always"
 		],
 		"react/jsx-uses-react": "off",
-		"react/react-in-jsx-scope": "off"
+		"react/react-in-jsx-scope": "off",
+		"prettier/prettier": [
+			"error",
+			{
+				"semi": true,
+				"endOfLine": "crlf",
+				"trailingComma": "none",
+				"tabWidth": 2,
+				"printWidth": 100,
+				"singleQuote": false,
+				"jsxSingleQuote": false,
+				"quoteProps": "consistent",
+				"bracketSpacing": true,
+				"bracketSameLine": true,
+				"arrowParens": "always",
+				"singleAttributePerLine": false
+			}
+		],
+		"curly": [
+			"error",
+			"all"
+		],
+		"lines-around-comment": [
+			"error",
+			{
+				"beforeBlockComment": true,
+				"afterBlockComment": true,
+				"beforeLineComment": true,
+				"afterLineComment": true,
+				"allowBlockStart": true,
+				"allowBlockEnd": true,
+				"allowObjectStart": true,
+				"allowObjectEnd": true,
+				"allowArrayStart": true,
+				"allowArrayEnd": true
+			}
+		],
+		"no-confusing-arrow": [
+			"error",
+			{
+				"allowParens": false
+			}
+		],
+		"no-mixed-operators": "error",
+		"no-tabs": [
+			"error",
+			{
+				"allowIndentationTabs": true
+			}
+		],
+		"no-unexpected-multiline": "error",
+		"quotes": [
+			"error",
+			"double",
+			{
+				"avoidEscape": true,
+				"allowTemplateLiterals": false
+			}
+		],
+		"no-restricted-syntax": [
+			"error",
+			"SequenceExpression"
+		]
 	}
 }

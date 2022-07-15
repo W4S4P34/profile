@@ -1,9 +1,9 @@
 const About = () => {
-	return (
-		<div className="d-flex mx-auto my-auto align-self-center">
+  return (
+    <div className="d-flex mx-auto my-auto align-self-center">
       Nothing here yet, come back later, mate!
-		</div>
-	);
+    </div>
+  );
 };
 
 export default About;
