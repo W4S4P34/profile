@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import "./index.css";
+import NavigateButton from "../../components/NavigateButton";
 
 const scripts = ["Welcome, buddy!", "Since you're here, let you come in and be my guest."];
 
@@ -37,15 +37,15 @@ const Intro = () => {
 
   return (
     <div
-      id="dialogue-container"
-      className="d-flex flex-column justify-content-between"
+      className="d-flex flex-column min-vh-100 justify-content-between"
       onClick={() => completeScript()}>
-      <Link
-        className="d-flex w-100 px-4 pt-4 justify-content-end text-reset text-decoration-none user-select-none"
-        to="/home">
+      <NavigateButton className="d-flex me-4 mt-4 align-self-end" to="/home">
         Skip &gt;
-      </Link>
-      <div className="d-flex w-100 px-4 justify-content-center user-select-none">{script}</div>
+      </NavigateButton>
+      <div className="d-flex mx-4 align-self-center user-select-none">{script}</div>
+      <div className="d-flex me-4 mb-4 align-self-end user-select-none">
+        Click anywhere to continue
+      </div>
     </div>
   );
 };
