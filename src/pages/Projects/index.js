@@ -1,8 +1,6 @@
 const Projects = () => {
   return (
-    <div className="d-flex mx-auto my-auto align-self-center">
-      Nothing here yet, come back later, mate!
-    </div>
+    <div className="d-flex mx-4 align-self-center">Nothing here yet, come back later, mate!</div>
   );
 };
 

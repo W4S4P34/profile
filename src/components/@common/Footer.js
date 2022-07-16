@@ -13,7 +13,7 @@ const Footer = () => {
     }
 
     return (
-      <div className="d-flex w-100 justify-content-between">
+      <div className="d-flex justify-content-between">
         <div id="copyright-label" className="d-flex ps-4 py-4">
           Copyright © 2022 Samuel La
         </div>

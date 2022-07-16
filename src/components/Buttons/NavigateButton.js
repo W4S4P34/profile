@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const NavigateButton = ({ id, className, to, children }) => {
   const [isHover, setIsHover] = useState(false);
 
-  const style = useSpring({
+  const animation = useSpring({
     transform: isHover ? "translate(-4px, -4px)" : "translate(0px, 0px)",
     textShadow: isHover ? "4px 4px 2px #2d3823" : "0px 0px 0px #2d3823"
   });
@@ -18,7 +18,7 @@ const NavigateButton = ({ id, className, to, children }) => {
   return (
     <div id={id} className={className}>
       <Link className="text-reset text-decoration-none user-select-none" to={to}>
-        <animated.div onMouseEnter={hover} onMouseLeave={unhover} style={style}>
+        <animated.div onMouseEnter={hover} onMouseLeave={unhover} style={animation}>
           {children}
         </animated.div>
       </Link>

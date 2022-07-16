@@ -2,7 +2,7 @@ import "./index.css";
 
 const Home = () => {
   return (
-    <div className="d-flex flex-column w-100 px-4">
+    <div className="d-flex flex-column mx-4">
       <div id="home-title" className="d-flex justify-content-center">
         SAMUEL LA
       </div>

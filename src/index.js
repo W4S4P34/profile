@@ -13,8 +13,8 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 import "./index.css";
 
-import Header from "./components/common/Header";
-import Footer from "./components/common/Footer";
+import Header from "./components/@common/Header";
+import Footer from "./components/@common/Footer";
 
 import Content from "./Content";
 

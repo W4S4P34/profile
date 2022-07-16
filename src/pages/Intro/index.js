@@ -1,51 +1,36 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import NavigateButton from "../../components/NavigateButton";
+import NavigateButton from "../../components/Buttons/NavigateButton";
+import Dialogue from "../../components/Texts/Dialogue";
+import BlinkText from "../../components/Texts/BlinkText";
 
-const scripts = ["Welcome, buddy!", "Since you're here, let you come in and be my guest."];
+const scripts = require("./scripts.json").scripts;
 
 const Intro = () => {
-  let navigate = useNavigate();
+  const [isClick, setClick] = useState(false);
 
-  const typeSpeed = 70;
-
-  const [script, setScript] = useState("");
-  const [index, setIndex] = useState(0);
-
-  function typeScript() {
-    if (script.length < scripts[index].length) {
-      setScript(script.concat(scripts[index].charAt(script.length)));
-    }
-  }
-
-  function completeScript() {
-    if (script.length < scripts[index].length) {
-      setScript(scripts[index]);
-    } else if (script.length === scripts[index].length && index < scripts.length - 1) {
-      setScript("");
-      setIndex(index + 1);
-    } else if (index === scripts.length - 1) {
-      navigate("/home");
-    }
-  }
-
-  useEffect(() => {
-    let timerType = setTimeout(() => typeScript(), typeSpeed);
-    return () => clearTimeout(timerType);
-  });
+  const navigate = useNavigate();
 
   return (
     <div
       className="d-flex flex-column min-vh-100 justify-content-between"
-      onClick={() => completeScript()}>
-      <NavigateButton className="d-flex me-4 mt-4 align-self-end" to="/home">
+      onClick={() => setClick(true)}>
+      <NavigateButton className="d-flex mx-4 mt-4 align-self-end" to="/home">
         Skip &gt;
       </NavigateButton>
-      <div className="d-flex mx-4 align-self-center user-select-none">{script}</div>
-      <div className="d-flex me-4 mb-4 align-self-end user-select-none">
+      <Dialogue
+        className="d-flex mx-4 align-self-center user-select-none"
+        scripts={scripts}
+        onComplete={() => {
+          navigate("/home");
+        }}
+        isClick={isClick}
+        setClick={setClick}
+      />
+      <BlinkText className="d-flex mx-4 mb-4 align-self-end user-select-none">
         Click anywhere to continue
-      </div>
+      </BlinkText>
     </div>
   );
 };
