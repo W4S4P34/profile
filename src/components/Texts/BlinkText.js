@@ -1,20 +1,19 @@
-import { useSpring, animated, easings } from "react-spring";
+import { useSpring, animated, config } from "react-spring";
 
 import PropTypes from "prop-types";
 
 const BlinkText = ({ id, className, children }) => {
   const animation = useSpring({
     from: {
-      opacity: 1
-    },
-    to: {
       opacity: 0.15
     },
-    config: {
-      duration: 1000,
-      easing: easings.easeInBack
+    to: {
+      opacity: 1
     },
-    loop: true
+    config: config.default,
+    loop: {
+      reverse: true
+    }
   });
 
   return (

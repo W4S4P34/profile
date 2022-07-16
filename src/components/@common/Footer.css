@@ -1,15 +1,11 @@
+#footer-container {
+	padding: 0.5rem 0rem;
+}
+
 #copyright-label {
   font-size: small;
 }
 
 #contact-channels #contact-icon {
-  font-size: larger;
-  line-height: 1px;
   margin-left: 30px;
-  transition: transform 0.15s linear 0s, text-shadow 0.15s linear 0s;
-}
-
-#contact-channels #contact-icon:hover {
-  transform: translate(-3px, -3px);
-  text-shadow: 4px 4px #00000044;
 }

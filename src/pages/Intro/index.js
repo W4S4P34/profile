@@ -16,19 +16,18 @@ const Intro = () => {
     <div
       className="d-flex flex-column min-vh-100 justify-content-between"
       onClick={() => setClick(true)}>
-      <NavigateButton className="d-flex mx-4 mt-4 align-self-end" to="/home">
+      <NavigateButton className="d-flex mt-4 align-self-end" to="/home">
         Skip &gt;
       </NavigateButton>
       <Dialogue
-        className="d-flex mx-4 align-self-center user-select-none"
+        className="d-flex align-self-center user-select-none"
         scripts={scripts}
+        clickEvent={[isClick, setClick]}
         onComplete={() => {
           navigate("/home");
         }}
-        isClick={isClick}
-        setClick={setClick}
       />
-      <BlinkText className="d-flex mx-4 mb-4 align-self-end user-select-none">
+      <BlinkText className="d-flex mb-4 align-self-end user-select-none">
         Click anywhere to continue
       </BlinkText>
     </div>

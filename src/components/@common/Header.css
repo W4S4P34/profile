@@ -13,16 +13,9 @@
 }
 
 #navbar-link {
-  transition: transform 0.15s linear 0s, text-shadow 0.15s linear 0s;
+  color: #fcffff;
 }
 
-#navbar-link:hover {
-  transform: translate(-3px, -3px);
-  text-shadow: 4px 4px #00000044;
-}
-
-#navbar-link.active {
+#navbar-link a.active {
   color: #bccdaf !important;
-  transform: translate(-3px, -3px);
-  text-shadow: 4px 4px #00000044;
 }

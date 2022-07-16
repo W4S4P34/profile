@@ -15,9 +15,6 @@ const Dialogue = (props) => {
   }
 
   function handleClickEvent() {
-    if (props.isClick === false) {
-      return;
-    }
     if (script.length < props.scripts[index].length) {
       setScript(props.scripts[index]);
     } else if (script.length === props.scripts[index].length && index < props.scripts.length - 1) {
@@ -31,9 +28,12 @@ const Dialogue = (props) => {
   }
 
   useEffect(() => {
+    if (!props.clickEvent || props.clickEvent[0] === false) {
+      return;
+    }
     handleClickEvent();
-    props.setClick(false);
-  }, [props.isClick]);
+    props.clickEvent[1](false);
+  });
 
   useEffect(() => {
     let timerType = setTimeout(() => typeScript(), typeSpeed);
@@ -41,7 +41,10 @@ const Dialogue = (props) => {
   }, [script, index]);
 
   return (
-    <div id={props.id} className={props.className}>
+    <div
+      id={props.id}
+      className={props.className}
+      onClick={!props.clickEvent ? handleClickEvent : null}>
       {script}
     </div>
   );
@@ -50,10 +53,10 @@ const Dialogue = (props) => {
 Dialogue.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
-  scripts: PropTypes.arrayOf(PropTypes.string),
-  onComplete: PropTypes.func,
-  isClick: PropTypes.bool,
-  setClick: PropTypes.func
+  scripts: PropTypes.arrayOf(PropTypes.string).isRequired,
+  clickEvent: PropTypes.array,
+  onClick: PropTypes.func,
+  onComplete: PropTypes.func
 };
 
 export default Dialogue;

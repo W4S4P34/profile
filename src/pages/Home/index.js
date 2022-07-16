@@ -2,11 +2,11 @@ import "./index.css";
 
 const Home = () => {
   return (
-    <div className="d-flex flex-column mx-4">
-      <div id="home-title" className="d-flex justify-content-center">
+    <div className="d-flex flex-column">
+      <div id="home-title" className="d-flex align-self-center">
         SAMUEL LA
       </div>
-      <div id="home-job" className="d-flex justify-content-center">
+      <div id="home-job" className="d-flex align-self-center">
         <span role="img" aria-label="Game controller">
           🎨
         </span>
@@ -15,7 +15,7 @@ const Home = () => {
           🎮
         </span>
       </div>
-      <div id="home-introduction" className="d-flex justify-content-center">
+      <div id="home-introduction" className="d-flex align-self-center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna magna, blandit sit amet
         quam nec, dapibus posuere turpis. Sed eget metus nibh. In lectus dolor, faucibus quis ex in,
         efficitur iaculis nibh. Cras odio ligula, faucibus at justo nec, semper mattis sem. Sed
