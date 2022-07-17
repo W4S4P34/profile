@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 
-import "./Footer.css";
-
 import NavigateButton from "../Buttons/NavigateButton";
+
+import "./Footer.css";
 
 const Footer = () => {
   let location = useLocation();
@@ -12,7 +12,7 @@ const Footer = () => {
   }
 
   return (
-    <div className="d-flex pb-3 justify-content-between">
+    <div className="d-flex pt-4 pb-3 justify-content-between">
       <div
         id="copyright-label"
         className="d-flex align-self-center text-reset text-decoration-none user-select-none">

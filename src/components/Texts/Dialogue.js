@@ -15,6 +15,10 @@ const Dialogue = (props) => {
   }
 
   function handleClickEvent() {
+    if (props.onClick) {
+      props.onClick();
+    }
+
     if (script.length < props.scripts[index].length) {
       setScript(props.scripts[index]);
     } else if (script.length === props.scripts[index].length && index < props.scripts.length - 1) {
@@ -28,23 +32,23 @@ const Dialogue = (props) => {
   }
 
   useEffect(() => {
-    if (!props.clickEvent || props.clickEvent[0] === false) {
-      return;
-    }
-    handleClickEvent();
-    props.clickEvent[1](false);
-  });
-
-  useEffect(() => {
     let timerType = setTimeout(() => typeScript(), typeSpeed);
     return () => clearTimeout(timerType);
   }, [script, index]);
+
+  useEffect(() => {
+    if (!props.clickState || props.clickState[0] === false) {
+      return;
+    }
+    handleClickEvent();
+    props.clickState[1](false);
+  }, [props.clickState]);
 
   return (
     <div
       id={props.id}
       className={props.className}
-      onClick={!props.clickEvent ? handleClickEvent : null}>
+      onClick={!props.clickState ? handleClickEvent : null}>
       {script}
     </div>
   );
@@ -54,7 +58,7 @@ Dialogue.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
   scripts: PropTypes.arrayOf(PropTypes.string).isRequired,
-  clickEvent: PropTypes.array,
+  clickState: PropTypes.array,
   onClick: PropTypes.func,
   onComplete: PropTypes.func
 };

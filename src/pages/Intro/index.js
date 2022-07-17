@@ -22,7 +22,7 @@ const Intro = () => {
       <Dialogue
         className="d-flex align-self-center user-select-none"
         scripts={scripts}
-        clickEvent={[isClick, setClick]}
+        clickState={[isClick, setClick]}
         onComplete={() => {
           navigate("/home");
         }}

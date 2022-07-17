@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const NavigateButton = (props) => {
   const [isHover, setIsHover] = useState(false);
 
-  const animationHover = useSpring({
+  const animation = useSpring({
     to: {
       transform: isHover ? "translate(-4px, -4px)" : "translate(0px, 0px)",
       textShadow: isHover ? "4px 4px 2px #2d3823" : "0px 0px 0px #2d3823"
@@ -17,6 +17,7 @@ const NavigateButton = (props) => {
   const hover = () => {
     setIsHover(true);
   };
+
   const unhover = () => {
     if (!props.activeRef) {
       setIsHover(false);
@@ -35,8 +36,9 @@ const NavigateButton = (props) => {
             ref={props.innerRef}
             className="text-reset text-decoration-none user-select-none"
             target={props.target}
-            to={props.to}>
-            <animated.div onMouseEnter={hover} onMouseLeave={unhover} style={animationHover}>
+            to={props.to}
+            aria-pressed="true">
+            <animated.div onMouseEnter={hover} onMouseLeave={unhover} style={animation}>
               {props.children}
             </animated.div>
           </NavLink>
@@ -48,22 +50,24 @@ const NavigateButton = (props) => {
           <Link
             className="text-reset text-decoration-none user-select-none"
             target={props.target}
-            to={props.to}>
-            <animated.div onMouseEnter={hover} onMouseLeave={unhover} style={animationHover}>
+            to={props.to}
+            aria-pressed="true">
+            <animated.div onMouseEnter={hover} onMouseLeave={unhover} style={animation}>
               {props.children}
             </animated.div>
           </Link>
         </div>
       );
     }
-  } else if (props.to.includes("https://")) {
+  } else if (props.to.startsWith("https://")) {
     return (
       <div id={props.id} className={props.className}>
         <a
           className="text-reset text-decoration-none user-select-none"
           target={props.target}
-          href={props.to}>
-          <animated.div onMouseEnter={hover} onMouseLeave={unhover} style={animationHover}>
+          href={props.to}
+          aria-pressed="true">
+          <animated.div onMouseEnter={hover} onMouseLeave={unhover} style={animation}>
             {props.children}
           </animated.div>
         </a>
@@ -73,12 +77,12 @@ const NavigateButton = (props) => {
 };
 
 NavigateButton.propTypes = {
-  innerRef: PropTypes.any,
   id: PropTypes.string,
   className: PropTypes.string,
   target: PropTypes.string,
   to: PropTypes.string,
   isNavLink: PropTypes.bool,
+  innerRef: PropTypes.any,
   activeRef: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 };

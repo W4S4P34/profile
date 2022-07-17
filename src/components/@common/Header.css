@@ -1,4 +1,5 @@
-#navbar-container {
+#header-container {
+  color: #fcffff;
   padding: 0px 0px;
   margin: 0px 0px;
 }
@@ -9,11 +10,11 @@
 }
 
 #navbar-icon {
-  color: #fcffff;
+  color: #fcffff !important;
 }
 
 #navbar-link {
-  color: #fcffff;
+  color: #fcffff !important;
 }
 
 #navbar-link a.active {

@@ -1,34 +1,27 @@
 import { useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
-import "./Header.css";
-
 import NavigateButton from "../Buttons/NavigateButton";
+import { headers } from "../../pages/routes";
+
+import "./Header.css";
 
 const Header = () => {
   let location = useLocation();
 
-  const pageTitle = ["Home", "About", "Projects", "Blogs"];
-  const pagePaths = pageTitle.map((element) => "/" + element.toLowerCase());
-
-  const pageStates = pageTitle.map(() => useState(false));
-  const pageRefs = pageTitle.map(() => useRef(null));
-
-  const pages = [];
-  for (let index = 0; index < pageTitle.length; index++) {
-    pages.push({
-      title: pageTitle[index],
-      path: pagePaths[index],
-      ref: pageRefs[index]
-    });
-  }
+  const pages = headers.map((element) => ({
+    title: element,
+    path: "/" + element.toLowerCase(),
+    ref: useRef(null),
+    state: useState(false)
+  }));
 
   useEffect(() => {
-    pageRefs.forEach((element) => {
-      if (element.current?.classList.contains("active")) {
-        pageStates[pageRefs.indexOf(element)][1](true);
+    pages.forEach((element) => {
+      if (element.ref.current?.classList.contains("active")) {
+        element.state[1](true);
       } else {
-        pageStates[pageRefs.indexOf(element)][1](false);
+        element.state[1](false);
       }
     });
   });
@@ -39,7 +32,7 @@ const Header = () => {
 
   return (
     <nav className="navbar navbar-expand-md navbar-dark">
-      <div id="navbar-container" className="container-fluid justify-content-between">
+      <div id="header-container" className="container-fluid justify-content-between">
         <NavigateButton className="navbar-brand" to="/home">
           SAMUEL
         </NavigateButton>
@@ -51,8 +44,8 @@ const Header = () => {
           data-bs-target="#navbar-content"
           aria-controls="navbar-content"
           aria-expanded="false">
-          <span id="navbar-icon">
-            <i className="fa fa-bars" aria-hidden="true"></i>
+          <span>
+            <i id="navbar-icon" className="fa fa-bars" aria-hidden="true"></i>
           </span>
         </button>
         <div id="navbar-content" className="navbar-collapse collapse justify-content-end text-end">
@@ -61,12 +54,12 @@ const Header = () => {
               return (
                 <NavigateButton
                   key={element.path}
-                  innerRef={element.ref}
                   id="navbar-link"
                   className="nav-link"
                   to={element.path}
                   isNavLink={true}
-                  activeRef={pageStates[pages.indexOf(element)][0]}>
+                  innerRef={element.ref}
+                  activeRef={element.state[0]}>
                   {element.title}
                 </NavigateButton>
               );
